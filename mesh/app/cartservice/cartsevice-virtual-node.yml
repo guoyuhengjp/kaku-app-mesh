@@ -10,7 +10,7 @@ spec:
   backends:
     - virtualService:
         virtualServiceRef:
-          name: redis-cart
+          name: redis-cart.my-apps.svc.cluster.local
   listeners:
     - portMapping:
         port: 7070
