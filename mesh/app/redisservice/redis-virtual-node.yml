@@ -13,4 +13,4 @@ spec:
         protocol: http
   serviceDiscovery:
     dns:
-      hostname: redis-cart
+      hostname: redis-cart.my-apps.svc.cluster.local

@@ -1,10 +1,10 @@
 apiVersion: appmesh.k8s.aws/v1beta2
 kind: VirtualService
 metadata:
-  name: redis-cart
+  name: redis-cart.my-apps.svc.cluster.local
   namespace: my-apps
 spec:
-  awsName: redis-cart
+  awsName: redis-cart.my-apps.svc.cluster.local
   provider:
     virtualRouter:
       virtualRouterRef:
