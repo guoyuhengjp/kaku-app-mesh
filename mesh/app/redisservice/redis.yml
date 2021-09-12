@@ -45,11 +45,10 @@ kind: Service
 metadata:
   name: redis-cart
   namespace: my-apps
-spec:
-  type: ClusterIP
-  selector:
+  labels:
     app: redis-cart
+spec:
   ports:
-    - name: redis
+    - name: http
       port: 6379
       targetPort: 6379
