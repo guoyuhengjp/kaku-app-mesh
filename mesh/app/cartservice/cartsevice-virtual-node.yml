@@ -1,0 +1,20 @@
+apiVersion: appmesh.k8s.aws/v1beta2
+kind: VirtualNode
+metadata:
+  name: cartservice
+  namespace: my-apps
+spec:
+  podSelector:
+    matchLabels:
+      app: cartservice
+  backends:
+    - virtualService:
+        virtualServiceRef:
+          name: redis-cart
+  listeners:
+    - portMapping:
+        port: 7070
+        protocol: grpc
+  serviceDiscovery:
+    dns:
+      hostname: cartservice.my-apps.svc.cluster.local

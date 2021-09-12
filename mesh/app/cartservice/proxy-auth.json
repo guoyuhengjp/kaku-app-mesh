@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "appmesh:StreamAggregatedResources",
+      "Resource": [
+        "arn:aws:appmesh:ap-northeast-1:448450085636:mesh/my-mesh/virtualNode/cartservice_my-apps"
+      ]
+    }
+  ]
+}

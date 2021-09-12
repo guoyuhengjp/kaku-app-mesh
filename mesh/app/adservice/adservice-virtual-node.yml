@@ -1,0 +1,16 @@
+apiVersion: appmesh.k8s.aws/v1beta2
+kind: VirtualNode
+metadata:
+  name: adservice
+  namespace: my-apps
+spec:
+  podSelector:
+    matchLabels:
+      app: my-app-adservice
+  listeners:
+    - portMapping:
+        port: 9555
+        protocol: grpc
+  serviceDiscovery:
+    dns:
+      hostname: adservice.my-apps.svc.cluster.local

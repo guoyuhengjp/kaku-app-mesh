@@ -1,0 +1,20 @@
+apiVersion: appmesh.k8s.aws/v1beta2
+kind: VirtualRouter
+metadata:
+  namespace: my-apps
+  name: cartservice-virtual-router
+spec:
+  listeners:
+    - portMapping:
+        port: 7070
+        protocol: grpc
+  routes:
+    - name: cartservice-route
+      httpRoute:
+        match:
+          prefix: /
+        action:
+          weightedTargets:
+            - virtualNodeRef:
+                name: cartservice
+              weight: 1

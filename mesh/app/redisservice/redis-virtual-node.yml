@@ -1,0 +1,16 @@
+apiVersion: appmesh.k8s.aws/v1beta2
+kind: VirtualNode
+metadata:
+  name: redis-cart
+  namespace: my-apps
+spec:
+  podSelector:
+    matchLabels:
+      app: redis-cart
+  listeners:
+    - portMapping:
+        port: 6379
+        protocol: http
+  serviceDiscovery:
+    dns:
+      hostname: redis-cart
